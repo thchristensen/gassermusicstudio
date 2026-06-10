@@ -3,6 +3,7 @@ const path = require('path');
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets");
+  eleventyConfig.addPassthroughCopy("src/_redirects");
   eleventyConfig.addPassthroughCopy({ admin: "admin" });
   eleventyConfig.addPassthroughCopy({ "src/_data/schema.json": "admin/schema.json" });
 
