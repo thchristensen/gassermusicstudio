@@ -1,39 +1,73 @@
-# Redirects for old WordPress pages
+# Pages (with and without trailing slashes)
+/user                / 302
 /user/               / 302
+/login               / 302
 /login/              / 302
+/register            / 302
 /register/           / 302
+/members             / 302
 /members/            / 302
+/logout              / 302
 /logout/             / 302
+/account             / 302
 /account/            / 302
+/password-reset      / 302
 /password-reset/     / 302
+/your-feed           / 302
 /your-feed/          / 302
+/news                / 302
 /news/               / 302
+/homework            / 302
 /homework/           / 302
+/sheet-music         / 302
 /sheet-music/        / 302
+/about               / 302
 /about/              / 302
+/meet-our-tutors     / 302
 /meet-our-tutors/    / 302
+/lessons             / 302
 /lessons/            / 302
+/faqs                / 302
 /faqs/               / 302
+/contact             / 302
 /contact/            / 302
+/piano-lessons       / 302
 /piano-lessons/      / 302
+/group-lessons       / 302
 /group-lessons/      / 302
+/blog                / 302
 /blog/               / 302
 
-# Redirects for old WordPress posts
-/news/new-location/                         / 302
-/news/new-studio-in-chorlton/               / 302
-/news/online-classes/                       / 302
-/news/safety-measures/                      / 302
-/blog/buying-electric-pianos/               / 302
-/news/winter-concert-2021/                  / 302
+# Posts (with and without trailing slashes)
+/news/new-location                         / 302
+/news/new-location/                        / 302
+/news/new-studio-in-chorlton               / 302
+/news/new-studio-in-chorlton/              / 302
+/news/online-classes                       / 302
+/news/online-classes/                      / 302
+/news/safety-measures                      / 302
+/news/safety-measures/                     / 302
+/blog/buying-electric-pianos               / 302
+/blog/buying-electric-pianos/              / 302
+/news/winter-concert-2021                  / 302
+/news/winter-concert-2021/                 / 302
+/blog/buying-a-piano-a-guide-for-beginners / 302
 /blog/buying-a-piano-a-guide-for-beginners/ / 302
+/blog/silent-and-hybrid-pianos-a-guide-for-beginners / 302
 /blog/silent-and-hybrid-pianos-a-guide-for-beginners/ / 302
+/blog/acoustic-pianos-a-guide-for-beginners / 302
 /blog/acoustic-pianos-a-guide-for-beginners/ / 302
-/blog/how-to-fund-buying-a-piano/           / 302
+/blog/how-to-fund-buying-a-piano           / 302
+/blog/how-to-fund-buying-a-piano/          / 302
+/blog/buying-a-second-hand-piano-a-checklist / 302
 /blog/buying-a-second-hand-piano-a-checklist/ / 302
+/blog/where-to-practise-when-i-dont-own-a-piano / 302
 /blog/where-to-practise-when-i-dont-own-a-piano/ / 302
-/blog/piano-maintenance-and-care/           / 302
+/blog/piano-maintenance-and-care           / 302
+/blog/piano-maintenance-and-care/          / 302
 
 # Feeds
+/feed                / 302
 /feed/               / 302
+/comments/feed       / 302
 /comments/feed/      / 302
