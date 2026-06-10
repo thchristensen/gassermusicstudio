@@ -4,6 +4,7 @@
 
 [build.environment]
   SECRETS_SCAN_OMIT_PATHS = "netlify/functions"
+  SECRETS_SCAN_OMIT_KEYS = "CLOUDINARY_CLOUD_NAME,CLOUDINARY_UPLOAD_PRESET,GITHUB_BRANCH,GITHUB_OWNER,GITHUB_REPO"
 
 [functions]
   directory = "netlify/functions"
