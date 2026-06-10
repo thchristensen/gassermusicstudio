@@ -1,0 +1,14 @@
+{
+  "name": "web-starter-template",
+  "version": "1.0.0",
+  "description": "Eleventy + Nunjucks starter with JSON-driven CMS",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy",
+    "dev": "netlify dev",
+    "sync:admin": "node node_modules/eleventy-cms-admin/sync.js"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.2"
+  }
+}

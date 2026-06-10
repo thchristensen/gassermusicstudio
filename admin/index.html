@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CMS Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Figtree:wght@400;500;600&display=swap" />
+    <link rel="stylesheet" href="admin.css" />
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  </head>
+  <body>
+
+    <div id="login-screen">
+      <div class="login-box">
+        <h1>CMS Admin</h1>
+        <button id="login-btn" class="btn btn-primary">Sign in</button>
+      </div>
+    </div>
+
+    <div id="admin-shell" hidden>
+
+    <header class="admin-header">
+      <span class="admin-header__title"><a id="site-name-link" href="/" target="_blank" rel="noopener"></a> CMS Admin</span>
+      <div class="admin-header__actions">
+        <div class="save-status-wrapper">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span id="save-status"></span>
+        </div>
+        <button id="save-btn" class="btn btn-primary">Save</button>
+        <button id="logout-btn" class="btn btn-ghost">Sign out</button>
+      </div>
+    </header>
+
+    <div class="admin-layout admin-layout--preview">
+      <aside class="admin-sidebar" id="sidebar">
+        <!-- Page tabs rendered by JS -->
+      </aside>
+      <main class="admin-main">
+        <div id="form-area">
+          <!-- Form fields rendered by JS -->
+        </div>
+      </main>
+      <div class="admin-preview" id="preview-pane">
+        <div class="admin-preview__bar">
+          <span class="admin-preview__label">Preview</span>
+          <button id="preview-refresh-btn" class="btn-icon" title="Refresh">↺</button>
+        </div>
+        <iframe id="preview-frame" title="Page preview"></iframe>
+      </div>
+    </div>
+
+    <!-- Media modal -->
+    <dialog id="media-modal">
+      <div class="media-modal__header">
+        <div class="media-modal__tabs">
+          <button class="media-tab active" data-tab="upload">Upload</button>
+          <button class="media-tab" data-tab="library">Library</button>
+        </div>
+        <button class="btn-icon" id="media-modal-close" title="Close">✕</button>
+      </div>
+      <div class="media-modal__body">
+        <div id="media-panel-upload" class="media-panel">
+          <p class="media-upload-hint">Upload a new image from your device.</p>
+          <button class="btn btn-primary" id="media-upload-trigger">Choose file</button>
+          <input type="file" id="media-file-input" accept="image/jpeg,image/png,image/webp,image/gif,image/svg+xml" hidden>
+          <p id="media-upload-loading" class="media-upload-loading" hidden>Uploading…</p>
+        </div>
+        <div id="media-panel-library" class="media-panel" hidden>
+          <input
+            type="search"
+            id="media-library-search"
+            class="media-library-search"
+            placeholder="Search images…"
+            autocomplete="off"
+          />
+          <div id="media-library-grid"></div>
+        </div>
+      </div>
+    </dialog>
+
+    <script src="admin.js"></script>
+
+    </div><!-- #admin-shell -->
+  </body>
+</html>

@@ -1,0 +1,9 @@
+node_modules/
+_site/
+.env
+# Local Netlify folder
+.netlify
+# Reference/archive files — not part of the build
+old_site/
+# Claude Code local settings
+.claude/settings.local.json

@@ -1,0 +1,86 @@
+:root {
+/* ── Color palette ─────────────────────────── */
+--shade-100:38 33% 95%;
+--shade-200: 40 31% 90%;
+--shade-300: 39 22% 82%;
+--shade-400: 40 18% 74%;
+--shade-500: 44 5% 61%;
+--shade-600: 180 1% 47%;
+--shade-700: 208 8% 34%;
+--shade-800: 212 15% 25%;
+--shade-900: 211 30% 15%;
+
+  /* ── Surface ─────────────────────────────── */
+  --surface:         hsl(var(--shade-100));
+  --surface-raised:  hsl(var(--shade-200));
+  --surface-sunken:  hsl(var(--shade-300));
+
+  /* ── Ink ─────────────────────────────────── */
+  --ink:             hsl(var(--shade-900));
+  --ink-muted:       hsl(var(--shade-600));
+  --ink-faint:       hsl(var(--shade-500));
+
+  /* ── Accent ──────────────────────────────── */
+  --color-accent-hue: 30;
+  --accent:          hsl(var(--color-accent-hue) 100% 69%);
+  --accent-hover:    hsl(calc(var(--color-accent-hue) - 1) 70% 55%);
+  --accent-subtle:   hsl(calc(var(--color-accent-hue) + 3) 90% 85%);
+  --accent-strong:   hsl(calc(var(--color-accent-hue) - 1) 87% 12%);
+  --accent-glow:     hsl(var(--color-accent-hue) 100% 40% / 0.15);
+
+  /* ── Accent alt ──────────────────────────── */
+  --color-accent-alt-hue: 14;
+  --accent-alt:          hsl(var(--color-accent-alt-hue) 48% 43%);
+  --accent-alt-hover:    hsl(calc(var(--color-accent-alt-hue) + 1) 100% 35%);
+  --accent-alt-subtle:   hsl(calc(var(--color-accent-alt-hue) + 3) 90% 97%);
+  --accent-alt-strong:   hsl(calc(var(--color-accent-alt-hue) - 1) 87% 12%);
+  --accent-alt-glow:     hsl(var(--color-accent-alt-hue) 100% 40% / 0.15);
+
+  /* ── Border ──────────────────────────────── */
+  --border:          hsl(var(--shade-300));
+  --border-strong:   hsl(var(--shade-400));
+
+  /* ── Spacing ─────────────────────────────── */
+  --space-xs:        0.5rem;
+  --space-sm:        1rem;
+  --space-md:        2rem;
+  --space-lg:        4rem;
+  --space-xl:        6rem;
+
+  /* ── Line thickness ──────────────────────── */
+  --line-thin:       1px;
+  --line-base:       2px;
+  --line-thick:      4px;
+
+  /* ── Radius ──────────────────────────────── */
+  --radius-sm:       4px;
+  --radius-md:       8px;
+  --radius-lg:       16px;
+  --radius-full:     9999px;
+
+  /* ── Type scale ──────────────────────────── */
+  --step--2: clamp(0.7813rem, 0.7736rem + 0.0341vw, 0.8rem);
+  --step--1: clamp(0.9375rem, 0.9119rem + 0.1136vw, 1rem);
+  --step-0:  clamp(1.125rem,  1.0739rem + 0.2273vw, 1.25rem);
+  --step-1:  clamp(1.35rem,   1.2631rem + 0.3864vw, 1.5625rem);
+  --step-2:  clamp(1.62rem,   1.4837rem + 0.6057vw, 1.9531rem);
+  --step-3:  clamp(1.944rem,  1.7405rem + 0.9044vw, 2.4414rem);
+  --step-4:  clamp(2.3328rem, 2.0387rem + 1.3072vw, 3.0518rem);
+  --step-5:  clamp(2.7994rem, 2.384rem  + 1.8461vw, 3.8147rem);
+
+  /* ── Typography ──────────────────────────── */
+  --font-base:           "Google Sans Flex", sans-serif;
+  --font-display:        "Spectral", serif;
+  --font-size-base:      1.125rem;
+  --line-height-base:    1.6;
+  --line-height-heading: 1.2;
+
+  /* ── Layout ──────────────────────────────── */
+  --max-width-content: 1100px;
+  --max-width-prose:   800px;
+
+  /* ── Transitions ─────────────────────────── */
+  --transition-fast: 75ms ease-out;
+  --transition-base: 150ms ease-out;
+  --transition-slow: 300ms ease-out;
+}

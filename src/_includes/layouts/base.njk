@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% set pageSeo = cms[seoKey].seo if seoKey else null %}
+    <title>{{ pageSeo.title if pageSeo and pageSeo.title else title }} — {{ site.title }}</title>
+    <meta name="description" content="{{ pageSeo.description if pageSeo and pageSeo.description else site.description }}" />
+    {% if pageSeo and pageSeo.ogImage %}<meta property="og:image" content="{{ pageSeo.ogImage }}" />{% endif %}
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  </head>
+  <body>
+    {% include "components/header.njk" %}
+    <main>
+      {{ content | safe }}
+    </main>
+    {% include "components/footer.njk" %}
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on('init', function(user) {
+          if (!user) {
+            window.netlifyIdentity.on('login', function() {
+              document.location.href = '/admin/';
+            });
+          }
+        });
+      }
+    </script>
+    <script>
+      if (location.search.includes('preview=1')) {
+        document.addEventListener('click', function(e) {
+          if (e.target.closest('a')) e.preventDefault();
+        });
+        window.addEventListener('message', function(e) {
+          if (!e.data || e.data.type !== 'cms-preview') return;
+          var values = e.data.values;
+          document.querySelectorAll('[data-cms-path]').forEach(function(el) {
+            var path = el.dataset.cmsPath;
+            if (path in values) {
+              if (el.tagName === 'IMG') {
+                el.src = values[path];
+              } else if (el.classList.contains('richtext')) {
+                el.innerHTML = values[path];
+              } else {
+                el.textContent = values[path];
+              }
+            }
+          });
+          document.querySelectorAll('[data-cms-bg-path]').forEach(function(el) {
+            var path = el.dataset.cmsBgPath;
+            if (path in values) {
+              el.style.backgroundImage = values[path] ? "url('" + values[path] + "')" : '';
+            }
+          });
+        });
+      }
+    </script>
+    <script>
+      (function () {
+        var btn = document.querySelector('.site-header__menu-btn');
+        var header = document.querySelector('.site-header');
+        if (!btn) return;
+        btn.addEventListener('click', function () {
+          var open = header.classList.toggle('site-header--open');
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+        document.addEventListener('click', function (e) {
+          if (!header.contains(e.target)) {
+            header.classList.remove('site-header--open');
+            btn.setAttribute('aria-expanded', 'false');
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+main {
+  width: 100%;
+}
+
+.container {
+  width: min(var(--max-width-content), 100% - clamp(var(--space-sm), 5vw, var(--space-lg)) * 2);
+  margin-inline: auto;
+}
+
+/* Sections */
+.section {
+  padding-block: var(--space-lg);
+}
+
+.section + .section {
+
+}
+
+.section--filled {
+  background: var(--surface-raised);
+  border-top: none;
+}
+
+.section--accent {
+  background: var(--accent);
+  color: #fff;
+  border-top: none;
+}

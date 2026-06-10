@@ -1,0 +1,41 @@
+{
+  "home": {
+    "_preview_url": "/",
+    "hero": {
+      "heading":    { "type": "text",  "label": "Hero Heading" },
+      "subheading": { "type": "text",  "label": "Hero Subheading" },
+      "image":      { "type": "image", "label": "Hero Background Image" },
+      "cta_text":   { "type": "text",  "label": "CTA Button Text" },
+      "cta_link":   { "type": "text",  "label": "CTA Button Link" }
+    },
+    "about": {
+      "heading": { "type": "text",     "label": "About Heading" },
+      "body":    { "type": "textarea", "label": "About Body" },
+      "image":   { "type": "image",    "label": "About Image" },
+      "credentials": {
+        "_type": "array",
+        "_single_field": true,
+        "_item": { "type": "text", "label": "Credential" }
+      }
+    },
+    "lessons": {
+      "heading":       { "type": "text",     "label": "Lessons Heading" },
+      "intro":         { "type": "textarea", "label": "Lessons Intro" },
+      "discount_note": { "type": "text",     "label": "Discount Note" },
+      "packages": {
+        "_type": "array",
+        "_item": {
+          "label":      { "type": "text", "label": "Package Label",    "size": "small" },
+          "price":      { "type": "text", "label": "Total Price",      "size": "small" },
+          "per_lesson": { "type": "text", "label": "Per Lesson Price", "size": "small" }
+        }
+      }
+    },
+    "contact": {
+      "heading": { "type": "text", "label": "Contact Heading" },
+      "email":   { "type": "text", "label": "Email" },
+      "phone":   { "type": "text", "label": "Phone" },
+      "address": { "type": "text", "label": "Address" }
+    }
+  }
+}

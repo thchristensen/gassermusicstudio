@@ -1,0 +1,50 @@
+{
+  "home": {
+    "hero": {
+      "heading": "Gasser Music Studio",
+      "subheading": "One-to-one private piano lessons for all ages and levels — face-to-face and online.",
+      "image": "/assets/images/studio-1.jpg",
+      "cta_text": "View Lessons & Pricing",
+      "cta_link": "#lessons"
+    },
+    "about": {
+      "heading": "About the Studio",
+      "body": "Gasser Music Studio offers one-to-one piano, music theory, and composition lessons for students of all ages and abilities — from complete beginners to advanced players.\n\nOur studio is based in Chorlton, South Manchester, where students learn on a beautiful Yamaha P121 upright piano. Online lessons are also available for students who prefer to learn from home.\n\nStudents are welcome to take part in city-centre concerts organised through our main studio branch. All tutors are professionally trained graduates of the Royal Northern College of Music and all staff are DBS cleared.",
+      "image": "/assets/images/studio-2.jpg",
+      "credentials": [
+        "Royal Northern College of Music graduates",
+        "DBS checked",
+        "GDPR compliant",
+        "Child protection policy"
+      ]
+    },
+    "lessons": {
+      "heading": "Lessons & Pricing",
+      "intro": "We offer piano, music theory, and composition lessons for all ages and levels. Lessons are available face-to-face at our Chorlton studio or online. All packages are invoiced monthly.",
+      "discount_note": "Morning discount: 5% off when booking 10 or more lessons paid in advance (9 AM – 3:30 PM slots).",
+      "packages": [
+        {
+          "label": "4 × 30 min",
+          "price": "£100",
+          "per_lesson": "£25 per lesson"
+        },
+        {
+          "label": "4 × 45 min",
+          "price": "£140",
+          "per_lesson": "£35 per lesson"
+        },
+        {
+          "label": "4 × 60 min",
+          "price": "£180",
+          "per_lesson": "£45 per lesson"
+        }
+      ]
+    },
+    "contact": {
+      "heading": "Get in Touch",
+      "email": "info@gassermusicstudio.com",
+      "phone": "",
+      "address": "63 New Barns Avenue, Chorlton, Manchester M21 7DB"
+    }
+  }
+}

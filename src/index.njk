@@ -1,0 +1,93 @@
+---
+layout: layouts/base.njk
+title: Home
+seoKey: home
+---
+
+<section
+  class="hero"
+  id="hero"
+  style="background-image: url('{{ cms.home.hero.image }}');"
+  data-cms-bg-path="cms.home.hero.image"
+>
+  <div class="hero__overlay" aria-hidden="true"></div>
+  <div class="container hero__content">
+    <h1 data-cms-path="cms.home.hero.heading">{{ cms.home.hero.heading }}</h1>
+    <p data-cms-path="cms.home.hero.subheading">{{ cms.home.hero.subheading }}</p>
+    <a
+      class="btn btn--hero"
+      href="{{ cms.home.hero.cta_link }}"
+      data-cms-path="cms.home.hero.cta_text"
+    >{{ cms.home.hero.cta_text }}</a>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="container about">
+    <div class="about__text">
+      <h2 data-cms-path="cms.home.about.heading">{{ cms.home.about.heading }}</h2>
+      <div class="about__body" data-cms-path="cms.home.about.body">{{ cms.home.about.body }}</div>
+      {% if cms.home.about.credentials %}
+        <ul class="credential-list">
+          {% for item in cms.home.about.credentials %}
+            <li data-cms-path="cms.home.about.credentials.{{ loop.index0 }}">{{ item }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+    {% if cms.home.about.image %}
+      <div class="about__image">
+        <img
+          src="{{ cms.home.about.image }}"
+          alt="Gasser Music Studio"
+          data-cms-path="cms.home.about.image"
+/>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<section class="section section--inverted" id="lessons">
+  <div class="container">
+    <h2 data-cms-path="cms.home.lessons.heading">{{ cms.home.lessons.heading }}</h2>
+    <p class="section__intro" data-cms-path="cms.home.lessons.intro">{{ cms.home.lessons.intro }}</p>
+    <div class="pricing-grid">
+      {% for pkg in cms.home.lessons.packages %}
+        <div class="pricing-card{% if loop.last %} pricing-card--featured{% endif %}">
+          <div class="pricing-card__label" data-cms-path="cms.home.lessons.packages.{{ loop.index0 }}.label">{{ pkg.label }}</div>
+          <div class="pricing-card__price" data-cms-path="cms.home.lessons.packages.{{ loop.index0 }}.price">{{ pkg.price }}</div>
+          <div class="pricing-card__per" data-cms-path="cms.home.lessons.packages.{{ loop.index0 }}.per_lesson">{{ pkg.per_lesson }}</div>
+        </div>
+      {% endfor %}
+    </div>
+    {% if cms.home.lessons.discount_note %}
+      <p class="discount-note" data-cms-path="cms.home.lessons.discount_note">{{ cms.home.lessons.discount_note }}</p>
+    {% endif %}
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="container contact-section">
+    <h2 data-cms-path="cms.home.contact.heading">{{ cms.home.contact.heading }}</h2>
+    <div class="contact-details">
+      {% if cms.home.contact.email %}
+        <p>
+          <span class="contact-details__label">Email</span>
+          <a href="mailto:{{ cms.home.contact.email }}" data-cms-path="cms.home.contact.email">{{ cms.home.contact.email }}</a>
+        </p>
+      {% endif %}
+      {% if cms.home.contact.phone %}
+        <p>
+          <span class="contact-details__label">Phone</span>
+          <span data-cms-path="cms.home.contact.phone">{{ cms.home.contact.phone }}</span>
+        </p>
+      {% endif %}
+      {% if cms.home.contact.address %}
+        <p>
+          <span class="contact-details__label">Studio</span>
+          <span data-cms-path="cms.home.contact.address">{{ cms.home.contact.address }}</span>
+        </p>
+      {% endif %}
+    </div>
+  </div>
+</section>
