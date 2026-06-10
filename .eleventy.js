@@ -6,6 +6,26 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ admin: "admin" });
   eleventyConfig.addPassthroughCopy({ "src/_data/schema.json": "admin/schema.json" });
 
+  eleventyConfig.addFilter("youtubeEmbedUrl", function(url) {
+    if (!url) return "";
+    let videoId = "";
+    try {
+      const parsed = new URL(url);
+      if (parsed.hostname === "youtu.be") {
+        videoId = parsed.pathname.slice(1);
+      } else if (parsed.hostname.includes("youtube.com")) {
+        videoId = parsed.searchParams.get("v");
+        if (!videoId && parsed.pathname.startsWith("/embed/")) {
+          videoId = parsed.pathname.split("/")[2];
+        }
+      }
+    } catch (e) {
+      const match = url.match(/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/i);
+      if (match) videoId = match[1];
+    }
+    return videoId ? `https://www.youtube.com/embed/${videoId}` : url;
+  });
+
   // Auto-register a collection for every folder collection defined in schema.json
   const schema = JSON.parse(fs.readFileSync(path.join(__dirname, 'src/_data/schema.json'), 'utf8'));
   for (const coll of schema._collections || []) {

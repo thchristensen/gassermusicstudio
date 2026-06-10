@@ -12,6 +12,7 @@
       "heading": { "type": "text",     "label": "About Heading" },
       "body":    { "type": "textarea", "label": "About Body" },
       "image":   { "type": "image",    "label": "About Image" },
+      "youtube_video_url": { "type": "text", "label": "YouTube Video URL (Optional)" },
       "credentials": {
         "_type": "array",
         "_single_field": true,

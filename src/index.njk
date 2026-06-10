@@ -12,6 +12,7 @@ seoKey: home
 >
   <div class="hero__overlay" aria-hidden="true"></div>
   <div class="container hero__content">
+    <img src="assets/images/logo-075x.png" width="250" alt="Gasser Music Studio logo" class="hero__logo"/>
     <h1 data-cms-path="cms.home.hero.heading">{{ cms.home.hero.heading }}</h1>
     <p data-cms-path="cms.home.hero.subheading">{{ cms.home.hero.subheading }}</p>
     <a
@@ -35,7 +36,18 @@ seoKey: home
         </ul>
       {% endif %}
     </div>
-    {% if cms.home.about.image %}
+    {% if cms.home.about.youtube_video_url %}
+      <div class="about__video">
+        <iframe
+          src="{{ cms.home.about.youtube_video_url | youtubeEmbedUrl }}"
+          title="Gasser Music Studio Promotional Video"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          data-cms-path="cms.home.about.youtube_video_url"
+        ></iframe>
+      </div>
+    {% elseif cms.home.about.image %}
       <div class="about__image">
         <img
           src="{{ cms.home.about.image }}"
@@ -67,27 +79,191 @@ seoKey: home
 </section>
 
 <section class="section" id="contact">
-  <div class="container contact-section">
-    <h2 data-cms-path="cms.home.contact.heading">{{ cms.home.contact.heading }}</h2>
-    <div class="contact-details">
-      {% if cms.home.contact.email %}
-        <p>
-          <span class="contact-details__label">Email</span>
-          <a href="mailto:{{ cms.home.contact.email }}" data-cms-path="cms.home.contact.email">{{ cms.home.contact.email }}</a>
-        </p>
-      {% endif %}
-      {% if cms.home.contact.phone %}
-        <p>
-          <span class="contact-details__label">Phone</span>
-          <span data-cms-path="cms.home.contact.phone">{{ cms.home.contact.phone }}</span>
-        </p>
-      {% endif %}
-      {% if cms.home.contact.address %}
-        <p>
-          <span class="contact-details__label">Studio</span>
-          <span data-cms-path="cms.home.contact.address">{{ cms.home.contact.address }}</span>
-        </p>
-      {% endif %}
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h2 data-cms-path="cms.home.contact.heading">{{ cms.home.contact.heading }}</h2>
+        <div class="contact-details">
+          {% if cms.home.contact.email %}
+            <p>
+              <span class="contact-details__label">Email</span>
+              <a href="mailto:{{ cms.home.contact.email }}" data-cms-path="cms.home.contact.email">{{ cms.home.contact.email }}</a>
+            </p>
+          {% endif %}
+          {% if cms.home.contact.phone %}
+            <p>
+              <span class="contact-details__label">Phone</span>
+              <span data-cms-path="cms.home.contact.phone">{{ cms.home.contact.phone }}</span>
+            </p>
+          {% endif %}
+          {% if cms.home.contact.address %}
+            <p>
+              <span class="contact-details__label">Studio</span>
+              <span data-cms-path="cms.home.contact.address">{{ cms.home.contact.address }}</span>
+            </p>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="contact-form-container">
+        <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="contact-form" id="contact-form">
+          <input type="hidden" name="form-name" value="contact"/>
+          <div style="display:none">
+            <label>Don’t fill this out if you’re human: <input name="bot-field"/></label>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="form-age-field" class="form-label">Student Age</label>
+              <select name="age" id="form-age-field" class="form-select">
+                <option value="Adult (18 or older)" selected>Adult (18 or older)</option>
+                <option value="17">17</option>
+                <option value="16">16</option>
+                <option value="15">15</option>
+                <option value="14">14</option>
+                <option value="13">13</option>
+                <option value="12">12</option>
+                <option value="11">11</option>
+                <option value="10">10</option>
+                <option value="9">9</option>
+                <option value="8">8</option>
+                <option value="7">7</option>
+                <option value="6">6</option>
+                <option value="5">5</option>
+                <option value="Under 5">Under 5</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="form-time-field" class="form-label">Preferred Time of Day</label>
+              <select name="preferred_time" id="form-time-field" class="form-select" required>
+                <option value="" disabled selected>Select preferred time...</option>
+                <option value="morning">Morning</option>
+                <option value="afternoon">Afternoon</option>
+                <option value="evening">Evening</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Conditional Parent Name Field -->
+          <div class="form-group form-group--conditional" id="parent-name-group">
+            <label for="form-parent-name-field" class="form-label">Parent / Guardian Name *</label>
+            <input type="text" name="parent_name" id="form-parent-name-field" class="form-control" placeholder="e.g. John Doe"/>
+          </div>
+
+          <div class="form-group" id="student-name-group">
+            <label for="form-name-field" class="form-label" id="student-name-label">Your Name *</label>
+            <input type="text" name="name" id="form-name-field" required class="form-control" placeholder="e.g. Jane Doe"/>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="form-email-field" class="form-label">Email Address *</label>
+              <input type="email" name="email" id="form-email-field" required class="form-control" placeholder="jane@example.com"/>
+            </div>
+
+            <div class="form-group">
+              <label for="form-phone-field" class="form-label">Phone Number</label>
+              <input type="tel" name="phone" id="form-phone-field" class="form-control" placeholder="(555) 000-0000"/>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="form-comments-field" class="form-label">Comments or Questions</label>
+            <textarea name="comments" id="form-comments-field" rows="4" class="form-control form-textarea" placeholder="How can we help you?"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--submit">Send Message</button>
+        </form>
+
+        <div id="contact-success" class="contact-success" style="display: none;">
+          <div class="contact-success__icon">✓</div>
+          <h3>Thank you!</h3>
+          <p>Your message has been sent successfully. We'll get back to you as soon as possible.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
+
+<script>
+  (function () {
+    var form = document.getElementById('contact-form');
+    var successMessage = document.getElementById('contact-success');
+    if (!form || !successMessage) 
+      return;
+    
+    // Conditional Fields Logic
+    var ageSelect = document.getElementById('form-age-field');
+    var parentNameGroup = document.getElementById('parent-name-group');
+    var parentNameInput = document.getElementById('form-parent-name-field');
+    var studentNameLabel = document.getElementById('student-name-label');
+    var studentNameInput = document.getElementById('form-name-field');
+
+    function updateConditionalFields() {
+      if (ageSelect.value === 'Adult (18 or older)') {
+        parentNameGroup
+          .classList
+          .remove('is-visible');
+        parentNameInput.required = false;
+        parentNameInput.value = '';
+        studentNameLabel.textContent = 'Your Name *';
+        studentNameInput.placeholder = 'e.g. Jane Doe';
+      } else {
+        parentNameGroup
+          .classList
+          .add('is-visible');
+        parentNameInput.required = true;
+        studentNameLabel.textContent = "Student's Name *";
+        studentNameInput.placeholder = 'e.g. Billy Doe';
+      }
+    }
+
+    if (ageSelect && parentNameGroup && parentNameInput && studentNameLabel && studentNameInput) {
+      ageSelect.addEventListener('change', updateConditionalFields);
+      // Initialize immediately
+      updateConditionalFields();
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      form
+        .classList
+        .add('is-submitting');
+      var submitButton = form.querySelector('button[type="submit"]');
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending...';
+      }
+
+      var formData = new FormData(form);
+      fetch('/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: new URLSearchParams(formData).toString()
+      })
+        .then(function (response) {
+          if (response.ok) {
+            form.style.display = 'none';
+            successMessage.style.display = 'flex';
+          } else {
+            throw new Error('Server returned ' + response.status + ' ' + response.statusText);
+          }
+        })
+        .catch(function (error) {
+          console.error('Submission error:', error);
+          alert('There was a problem submitting your message. Please try again or email us directly.');
+          form
+            .classList
+            .remove('is-submitting');
+          if (submitButton) {
+            submitButton.disabled = false;
+            submitButton.textContent = 'Send Message';
+          }
+        });
+    });
+  })();
+</script>

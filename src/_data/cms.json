@@ -1,9 +1,9 @@
 {
   "home": {
     "hero": {
-      "heading": "Gasser Music Studio",
+      "heading": "Piano Lessons in Manchester",
       "subheading": "One-to-one private piano lessons for all ages and levels — face-to-face and online.",
-      "image": "/assets/images/studio-1.jpg",
+      "image": "/assets/images/bg.jpg",
       "cta_text": "View Lessons & Pricing",
       "cta_link": "#lessons"
     },
@@ -11,6 +11,7 @@
       "heading": "About the Studio",
       "body": "Gasser Music Studio offers one-to-one piano, music theory, and composition lessons for students of all ages and abilities — from complete beginners to advanced players.\n\nOur studio is based in Chorlton, South Manchester, where students learn on a beautiful Yamaha P121 upright piano. Online lessons are also available for students who prefer to learn from home.\n\nStudents are welcome to take part in city-centre concerts organised through our main studio branch. All tutors are professionally trained graduates of the Royal Northern College of Music and all staff are DBS cleared.",
       "image": "/assets/images/studio-2.jpg",
+      "youtube_video_url": "https://www.youtube.com/watch?v=xSsb8OYrQeQ",
       "credentials": [
         "Royal Northern College of Music graduates",
         "DBS checked",
@@ -21,7 +22,7 @@
     "lessons": {
       "heading": "Lessons & Pricing",
       "intro": "We offer piano, music theory, and composition lessons for all ages and levels. Lessons are available face-to-face at our Chorlton studio or online. All packages are invoiced monthly.",
-      "discount_note": "Morning discount: 5% off when booking 10 or more lessons paid in advance (9 AM – 3:30 PM slots).",
+      "discount_note": "",
       "packages": [
         {
           "label": "4 × 30 min",
