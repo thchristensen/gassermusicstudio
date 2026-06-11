@@ -65,7 +65,7 @@ seoKey: home
     <p class="section__intro" data-cms-path="cms.home.lessons.intro">{{ cms.home.lessons.intro }}</p>
     <div class="pricing-grid">
       {% for pkg in cms.home.lessons.packages %}
-        <div class="pricing-card{% if loop.last %} pricing-card--featured{% endif %}">
+        <div class="pricing-card">
           <div class="pricing-card__label" data-cms-path="cms.home.lessons.packages.{{ loop.index0 }}.label">{{ pkg.label }}</div>
           <div class="pricing-card__price" data-cms-path="cms.home.lessons.packages.{{ loop.index0 }}.price">{{ pkg.price }}</div>
           <div class="pricing-card__per" data-cms-path="cms.home.lessons.packages.{{ loop.index0 }}.per_lesson">{{ pkg.per_lesson }}</div>
